@@ -4,15 +4,15 @@ from langchain_core.documents import Document
 
 def split_documents(documents: List[Document]) -> List[Document]:
     splitter = RecursiveCharacterTextSplitter(
-        chunk_size=400,
-        chunk_overlap=80
+        chunk_size=700,
+        chunk_overlap=120
     )
 
     chunked_docs = []
 
     for doc in documents:
         # Don't split short Sanskrit verses
-        if doc.metadata["type"] == "sanskrit":
+        if doc.metadata.get("type" , "normal") == "sanskrit":
             chunked_docs.append(doc)
         else:
             splits = splitter.split_documents([doc])
