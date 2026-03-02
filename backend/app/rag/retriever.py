@@ -1,3 +1,6 @@
+import os
+os.environ["TRANSFORMERS_VERBOSITY"] = "error"
+os.environ["HF_HUB_DISABLE_PROGRESS_BARS"] = "1"
 from app.rag.embeddings import get_embedding_model
 from langchain_chroma import Chroma
 from app.config import CHROMA_PATH

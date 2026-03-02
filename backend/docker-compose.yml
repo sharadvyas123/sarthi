@@ -1,0 +1,23 @@
+services:
+  ollama:
+    image: ollama/ollama
+    container_name: sarthi-ollama
+    volumes:
+      - ollama_data:/root/.ollama
+
+  sarthi:
+    build: .
+    container_name: sarthi-cli
+    stdin_open: true
+    tty: true
+    depends_on:
+      - ollama
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+      - HF_HOME=/root/.cache/huggingface  
+    volumes:
+      - hf_cache:/root/.cache/huggingface
+
+volumes:
+  ollama_data:
+  hf_cache:

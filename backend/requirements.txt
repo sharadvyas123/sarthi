@@ -6,5 +6,8 @@ python-dotenv
 pypdf
 unstructured
 tiktoken
+langchain-chroma
 sentence-transformers
 langchain-huggingface
+rich
+pyfiglet

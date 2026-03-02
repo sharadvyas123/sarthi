@@ -4,11 +4,12 @@ from app.agent.tools import retrieve_gita_docs , extract_reference_regex
 from langchain_core.prompts import ChatPromptTemplate
 from app.config import SYSTEM_PROMPT_PATH, ANSWER_PROMPT_PATH
 from langchain_ollama import ChatOllama
+import os
 
 MODEL_NAME = "llama3"
 llm = ChatOllama(
     model=MODEL_NAME,
-    base_url="http://127.0.0.1:11434",
+    base_url=os.getenv("OLLAMA_HOST", "http://localhost:11434"),
     temperature=0
 )
 
