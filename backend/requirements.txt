@@ -11,3 +11,5 @@ sentence-transformers
 langchain-huggingface
 rich
 pyfiglet
+flask
+flask-cors
