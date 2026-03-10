@@ -18,11 +18,6 @@ sarthi/
 │   ├── prompts/
 │   │   ├── system_prompt.txt  # Krishna-like behavior
 │   │   ├── answer_prompt.txt  # how to answer life questions
-│   │   └── shloka_prompt.txt  # verse explanation format
-│   │
-│   ├── api/
-│   │   ├── __init__.py
-│   │   └── chat.py            # FastAPI / Streamlit endpoint
 │   │
 │   └── config.py              # model, paths, constants
 │
@@ -37,6 +32,9 @@ sarthi/
 ├── chroma_db/                 # persisted vector DB
 │
 ├── .env
+├── Dockerfile
+├── docker-compose.yml
 ├── requirements.txt
-├── langgraph.json
+├── server.py
+├── main.py                    # for the docker
 └── run.py                     # entry point

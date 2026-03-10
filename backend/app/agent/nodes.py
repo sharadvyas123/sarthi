@@ -5,11 +5,15 @@ from langchain_core.prompts import ChatPromptTemplate
 from app.config import SYSTEM_PROMPT_PATH, ANSWER_PROMPT_PATH
 from langchain_ollama import ChatOllama
 import os
+from dotenv import load_dotenv
+load_dotenv(override=True)
 
 MODEL_NAME = "llama3"
+base_url = os.getenv("OLLAMA_HOST", "http://127.0.0.1:11434")
+print(base_url)
 llm = ChatOllama(
     model=MODEL_NAME,
-    base_url=os.getenv("OLLAMA_HOST", "http://localhost:11434"),
+    base_url = base_url,
     temperature=0
 )
 
